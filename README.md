@@ -6,4 +6,4 @@ for the original project and possibly more information as to the tools function 
 
 # Current Progress
 
-As it stands, currently a very simple version of the script is functional (NWNHotkeys.py) and the next step is to attempt to only have it function if the game window is in focus (NWNHotkeys-restrict-function-to-window.py) this currently isn't functional, and is very much a work in progress as i learn python through trial and error.
+As it stands, currently a very simple version of the script is functional [NWNHotkeys.py](NWNHotkeys.py) and the next step is to attempt to only have it function if the game window is in focus [NWNHotkeys-restrict-function-to-window.py](NWNHotkeys-restrict-function-to-window.py) this currently isn't functional, and is very much a work in progress as i learn python through trial and error.
