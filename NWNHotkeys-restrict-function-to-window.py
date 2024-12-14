@@ -1,38 +1,22 @@
 import keyboard
-import pyautogui
+import mouse
 import time
-import psutil
 import pygetwindow as gw
 
-QBHK = 'ctrl + f'
-TARGET_PROCESS = 'nwmain.exe'
 
-def is_target_process_active():
-	active_window = gw.getActiveWindow()
-	
-	if active_window is not None:
-		try:
-			process = psutil.Process(active_window._pid)
-			return process.name() == TARGET_PROCESS
-		except (psutil.NoSuchProcess, AttributeError):
-			return False
-	return False
+QBHK = 'ctrl + f'
+TARGET_WINDOW = 'Neverwinter Nights'
 
 def QB():
-	if is_target_process_active():
-		for _ in range(10):
-			try:
-				MousePos = pyautogui.position()
-				pyautogui.dragRel(
-					xOffset= 300,
-					button='right',
-					duration= 0.200)
-				pyautogui.moveTo(MousePos)
-			except Exception as e:
-				print(f"Error during mouse action: {e}")
-	else:
-		print(f"Neverwinter Nights is not in focus or '{TARGET_PROCESS}' is not running")
-  
+	active_window = gw.getActiveWindow()
+	MousePos = mouse.get_position()
+	if "Neverwinter Nights" in active_window.title:
+			for _ in range(10):
+				mouse.hold("right")
+				mouse.move(300, 0, False, 0.2)
+				mouse.release("right")
+				mouse.move(*MousePos, True, 0.2)
+
 keyboard.add_hotkey(QBHK, QB)
 
 while True:
