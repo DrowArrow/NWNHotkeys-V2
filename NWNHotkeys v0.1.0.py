@@ -6,7 +6,7 @@ import configparser as cp
 import os
 
 # version 0.0.1
-TARGET_WINDOW = 'Neverwinter Nights'
+TARGET_WINDOW = "Neverwinter Nights"
 
 def create_config():
 	config = cp.ConfigParser()
@@ -14,7 +14,7 @@ def create_config():
 	config["General"] = {"QBHK": "ctrl + f", "LOOPS": "10"}
 #	config["Options"] = {"Opacity": "100", "AlwaysOnTop": "1"}
 
-	with open('config.ini', 'w') as configfile:
+	with open("config.ini", "w") as configfile:
 		config.write(configfile)
 
 
@@ -43,6 +43,7 @@ if __name__ == "__main__":
 
 
 def QB():
+	config_data = read_config()
 	active_window = gw.getActiveWindow()
 	MousePos = mouse.get_position()
 	loop_count = config_data["LOOP"]
