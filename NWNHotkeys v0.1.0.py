@@ -1,4 +1,3 @@
-from platform import version
 import keyboard
 import mouse
 import time
