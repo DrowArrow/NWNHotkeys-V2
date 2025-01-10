@@ -4,6 +4,7 @@ import time
 import pygetwindow as gw
 import configparser as cp
 import os
+import tkinter
 
 # version 0.0.1
 TARGET_WINDOW = "Neverwinter Nights"
@@ -55,6 +56,11 @@ def QB():
 			mouse.move(*MousePos, True, 0.15)
 
 keyboard.add_hotkey(config_data["QBHK"], QB)
+
+root = tkinter.Tk()
+root.title("NWNHotkeys")
+root.geometry("300x200")
+root.mainloop()
 
 while True:
 	try:
